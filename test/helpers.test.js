@@ -5,7 +5,7 @@ describe("functionality of helper functions", () => {
   let testBook;
   let testLibrary;
   beforeEach(function () {
-    testBook = Book("harry potter", "jk rawling", "666", true);
+    testBook = Book("harry potter", "jk rawling", "666");
     testLibrary = [];
   });
 

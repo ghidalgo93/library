@@ -1,10 +1,9 @@
-const Book = (title, author, pages, read) => {
+const Book = (title, author, pages) => {
   const getTitle = () => title;
   const getAuthor = () => author;
   const getPages = () => pages;
-  const getRead = () => read;
 
-  return { getTitle, getAuthor, getPages, getRead };
+  return { getTitle, getAuthor, getPages };
 };
 
 export default Book;

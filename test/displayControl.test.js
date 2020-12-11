@@ -1,10 +1,16 @@
-
+import { createBookCard } from "../src/displayControl";
+import Book from "../src/book";
 
 describe("test functionality of display controllers", () => {
-	beforeEach(function () {
-	});
+  let testBook;
+  let testLibrary;
+  beforeEach(function () {
+    testBook = Book("harry potter", "jk rawling", "666");
+    testLibrary = [];
+  });
 
-	it("displayLibrary should return a node list", () => {
-
-	});
+  it("createBookCard should return an html node", () => {
+    console.log(createBookCard(testBook).nodeType);
+    expect(createBookCard(testBook).nodeType).toBe(Element);
+  });
 });
