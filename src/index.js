@@ -11,7 +11,7 @@ const libraryContainer = document.getElementById("library-container");
 // form
 const newBookForm = document.getElementById("new-form");
 
-// modal
+// modal (ie popup)
 const newBookModal = document.getElementById("new-modal");
 const newBookBtn = document.getElementById("new-btn");
 const span = document.getElementsByClassName("close")[0];
