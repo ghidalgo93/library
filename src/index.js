@@ -12,6 +12,11 @@ const span = document.getElementsByClassName("close")[0];
 
 const myLibrary = [];
 
+const testBook1 = Book("jack", "nook", 222, "read");
+const testBook2 = Book();
+addBookToLibrary(testBook1, myLibrary);
+addBookToLibrary(testBook2, myLibrary);
+
 displayLibrary(myLibrary, libraryContainer);
 
 // When the user clicks on the button, open the modal
