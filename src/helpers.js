@@ -4,4 +4,17 @@ function addBookToLibrary(book, library) {
   return libraryCpy;
 }
 
-export default addBookToLibrary;
+function verifyInputs(inputs) {
+  if (inputs.title.value === "") {
+    return false;
+  }
+  if (inputs.author.value === "") {
+    return false;
+  }
+  if (inputs.pages.value === "") {
+    return false;
+  }
+  return true;
+}
+
+export { addBookToLibrary, verifyInputs };
