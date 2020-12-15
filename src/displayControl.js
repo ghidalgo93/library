@@ -9,7 +9,8 @@ function createBookCard(book) {
   const pagesDiv = document.createElement("div");
   pagesDiv.textContent = book.getPages();
   const readBtn = document.createElement("button");
-  readBtn.textContent = book.getRead();
+  readBtn.textContent = book.getRead() ? "Read" : "Not Read";
+  readBtn.style.backgroundColor = book.getRead() ? "green" : "red";
   const removeBtn = document.createElement("button");
   removeBtn.textContent = "Remove";
 

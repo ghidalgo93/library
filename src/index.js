@@ -8,6 +8,9 @@ let myLibrary = [];
 // library container
 const libraryContainer = document.getElementById("library-container");
 
+// form
+const newBookForm = document.getElementById("new-form");
+
 // modal
 const newBookModal = document.getElementById("new-modal");
 const newBookBtn = document.getElementById("new-btn");
@@ -25,20 +28,13 @@ addBtn.onclick = (e) => {
       inputs.title.value,
       inputs.author.value,
       inputs.pages.value,
-      inputs.read.value
+      inputs.read.checked
     );
     myLibrary = addBookToLibrary(newBook, myLibrary);
-    e.target.form.reset();
+    newBookForm.reset();
     displayLibrary(myLibrary, libraryContainer);
   }
 };
-
-// const testBook1 = Book("jack", "nook", 222, "read");
-// const testBook2 = Book();
-// myLibrary = addBookToLibrary(testBook1, myLibrary);
-// myLibrary = addBookToLibrary(testBook2, myLibrary);
-
-// displayLibrary(myLibrary, libraryContainer);
 
 // When the user clicks on the button, open the modal
 newBookBtn.onclick = () => {
@@ -48,4 +44,5 @@ newBookBtn.onclick = () => {
 // When the user clicks on <span> (x), close the modal
 span.onclick = () => {
   newBookModal.style.display = "none";
+  newBookForm.reset();
 };
