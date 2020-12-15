@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -10,12 +10,34 @@
     <div id="new-btn-container">
       <button id="new-btn">+ New Book</button>
     </div>
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Some text in the Modal..</p>
-      </div>
+    <div id="new-modal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<legend>New Book</legend>
+				<form id="new-form" action="/src/index.js">
+					<input
+						id="title"
+						name="title"
+						type="text"
+						placeholder="Title"
+					/>
+					<input
+						id="author"
+						name="author"
+						type="text"
+						placeholder="Author"
+					/>
+					<input
+						id="pages"
+						name="pages"
+						type="text"
+						placeholder="Pages"
+					/>
+					<label for="read">Read: </label>
+					<input id="read" name="read" type="checkbox" value="true" />
+					<button id="add-btn" type="submit" form="new-form">Add</button>
+			</div>
+      </form>
     </div>
     <div id="library-container"></div>
     <script src="main.js"></script>
