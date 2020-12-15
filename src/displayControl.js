@@ -1,21 +1,23 @@
 function createBookCard(book) {
-  const title = book.getTitle();
-  const author = book.getAuthor();
-  const pages = book.getPages();
-
   const bookDiv = document.createElement("div");
   bookDiv.classList.add("book");
 
   const titleDiv = document.createElement("div");
-  titleDiv.textContent = title;
+  titleDiv.textContent = book.getTitle();
   const authorDiv = document.createElement("div");
-  authorDiv.textContent = author;
+  authorDiv.textContent = book.getAuthor();
   const pagesDiv = document.createElement("div");
-  pagesDiv.textContent = pages;
+  pagesDiv.textContent = book.getPages();
+  const readBtn = document.createElement("button");
+  readBtn.textContent = book.getRead();
+  const removeBtn = document.createElement("button");
+  removeBtn.textContent = "Remove";
 
   bookDiv.appendChild(titleDiv);
   bookDiv.appendChild(authorDiv);
   bookDiv.appendChild(pagesDiv);
+  bookDiv.appendChild(readBtn);
+  bookDiv.appendChild(removeBtn);
 
   return bookDiv;
 }
