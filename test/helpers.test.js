@@ -1,5 +1,5 @@
 import Book from "../src/book";
-import addBookToLibrary from "../src/helpers";
+import { addBookToLibrary } from "../src/helpers";
 
 describe("functionality of helper functions", () => {
   let testBook;

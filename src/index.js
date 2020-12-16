@@ -1,6 +1,10 @@
 import "./styles.css";
 import Book from "./book";
-import { verifyInputs, addBookToLibrary } from "./helpers";
+import {
+  removeBookFromLibrary,
+  verifyInputs,
+  addBookToLibrary,
+} from "./helpers";
 import { displayLibrary } from "./displayControl";
 
 let myLibrary = [];
@@ -34,7 +38,18 @@ addBtn.onclick = (e) => {
     newBookForm.reset();
     displayLibrary(myLibrary, libraryContainer);
   }
+  // else, give 'required' styles of some kind
 };
+
+libraryContainer.addEventListener("click", function (e) {
+  if (e.target && e.target.className === "remove-btn") {
+    myLibrary = removeBookFromLibrary(e.target.dataset.index, myLibrary);
+    displayLibrary(myLibrary, libraryContainer);
+  } else if (e.target && e.target.className === "read-btn") {
+    myLibrary[e.target.dataset.index].toggleRead();
+    displayLibrary(myLibrary, libraryContainer);
+  }
+});
 
 // When the user clicks on the button, open the modal
 newBookBtn.onclick = () => {

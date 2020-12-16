@@ -6,7 +6,7 @@ function removeAllChildNodes(parent) {
   }
 }
 
-function createBookCard(book) {
+function createBookCard(book, indexOfBook) {
   const bookDiv = document.createElement("div");
   bookDiv.classList.add("book");
 
@@ -17,10 +17,14 @@ function createBookCard(book) {
   const pagesDiv = document.createElement("div");
   pagesDiv.textContent = book.getPages();
   const readBtn = document.createElement("button");
+  readBtn.classList.add("read-btn");
+  readBtn.dataset.index = indexOfBook;
   readBtn.textContent = book.getRead() ? "Read" : "Not Read";
   readBtn.style.backgroundColor = book.getRead() ? "green" : "red";
   const removeBtn = document.createElement("button");
   removeBtn.textContent = "Remove";
+  removeBtn.classList.add("remove-btn");
+  removeBtn.dataset.index = indexOfBook;
 
   bookDiv.appendChild(titleDiv);
   bookDiv.appendChild(authorDiv);
@@ -34,8 +38,8 @@ function createBookCard(book) {
 function displayLibrary(library, parentNode) {
   // err handling
   removeAllChildNodes(parentNode);
-  library.forEach((book) => {
-    const bookCard = createBookCard(book);
+  library.forEach((book, index) => {
+    const bookCard = createBookCard(book, index);
     parentNode.appendChild(bookCard);
   });
 }

@@ -4,6 +4,12 @@ function addBookToLibrary(book, library) {
   return libraryCpy;
 }
 
+function removeBookFromLibrary(bookIndex, library) {
+  const libraryCpy = [...library];
+  libraryCpy.splice(bookIndex, 1);
+  return libraryCpy;
+}
+
 function verifyInputs(inputs) {
   if (inputs.title.value === "") {
     return false;
@@ -17,4 +23,4 @@ function verifyInputs(inputs) {
   return true;
 }
 
-export { addBookToLibrary, verifyInputs };
+export { removeBookFromLibrary, addBookToLibrary, verifyInputs };
