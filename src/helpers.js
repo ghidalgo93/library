@@ -1,3 +1,14 @@
+import Book from "./book";
+
+function stringifyLibrary(library) {
+  let x = [];
+  library.forEach((book) => {
+    x.push(book.obj());
+  });
+  x = JSON.stringify(x);
+  return x;
+}
+
 function addBookToLibrary(book, library) {
   const libraryCpy = [...library];
   libraryCpy.push(book);
@@ -23,4 +34,20 @@ function verifyInputs(inputs) {
   return true;
 }
 
-export { removeBookFromLibrary, addBookToLibrary, verifyInputs };
+function parseLibrary(library) {
+  const x = JSON.parse(library);
+  let y = [];
+  x.forEach((book) => {
+    const newBook = Book(book.title, book.author, book.pages, book.read);
+    y = addBookToLibrary(newBook, y);
+  });
+  return y;
+}
+
+export {
+  parseLibrary,
+  stringifyLibrary,
+  removeBookFromLibrary,
+  addBookToLibrary,
+  verifyInputs,
+};

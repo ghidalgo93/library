@@ -5,7 +5,11 @@ const Book = (title, author, pages, read) => {
   const getRead = () => read;
   const toggleRead = () => (read = !read);
 
-  return { getTitle, getAuthor, getPages, getRead, toggleRead };
+  const obj = () => {
+    return { title, author, pages, read };
+  };
+
+  return { getTitle, getAuthor, getPages, getRead, toggleRead, obj };
 };
 
 export default Book;
