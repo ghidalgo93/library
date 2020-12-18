@@ -1,5 +1,5 @@
 body {
-  background-color: #7dbfdb;
+  background-color: #669997;
   font-family: Arial, sans-serif;
 }
 
@@ -15,6 +15,10 @@ button {
   font-size: 25px;
   border-radius: 10px;
   border: solid 3px black;
+  background-color: #66997e;
+}
+button:hover {
+  background-color: #668199;
 }
 
 #new-btn-container {
@@ -26,18 +30,21 @@ button {
 #library-container {
   display: flex;
   flex-flow: row wrap;
+  height: 25%;
 }
 
 .book {
   display: flex;
   flex-flow: column;
   align-items: center;
-  background-color: peachpuff;
+  justify-content: space-around;
+  background-color: #668199;
   font-size: 25px;
   border-radius: 10px;
   border: solid 3px black;
   margin: 20px;
   padding: 10px;
+  height: 100%;
 }
 
 .modal {
@@ -56,24 +63,41 @@ button {
 .modal-content {
   display: flex;
   flex-flow: column;
-  background-color: #fefefe;
+  background-color: #668199;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
-  border: 1px solid #888;
   width: 20%;
+  height: 40%;
+  border-radius: 10px;
+  border: solid 3px black;
   align-items: center;
+  font-size: 25px;
 }
 
 form {
   display: flex;
   flex-flow: column;
-  width: 50%;
+  flex: 1 1 auto;
+  justify-content: space-around;
+}
+
+.text-input {
+  border-radius: 10px;
+  border: solid 3px black;
+  height: 50px;
+  font-size: 25px;
+  width: 80%;
+  background-color: #66997e;
+}
+
+#add-btn {
+  width: 70%;
+  align-self: center;
 }
 
 /* The Close Button */
 .close {
   color: #aaa;
-  float: right;
   font-size: 28px;
   font-weight: bold;
   align-self: flex-end;

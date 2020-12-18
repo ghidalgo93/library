@@ -15,12 +15,12 @@ function createBookCard(book, indexOfBook) {
   const authorDiv = document.createElement("div");
   authorDiv.textContent = book.getAuthor();
   const pagesDiv = document.createElement("div");
-  pagesDiv.textContent = book.getPages();
+  pagesDiv.textContent = `${book.getPages()} pages`;
   const readBtn = document.createElement("button");
   readBtn.classList.add("read-btn");
   readBtn.dataset.index = indexOfBook;
   readBtn.textContent = book.getRead() ? "Read" : "Not Read";
-  readBtn.style.backgroundColor = book.getRead() ? "green" : "red";
+  readBtn.style.backgroundColor = book.getRead() ? "#66997e" : "#996668";
   const removeBtn = document.createElement("button");
   removeBtn.textContent = "Remove";
   removeBtn.classList.add("remove-btn");
