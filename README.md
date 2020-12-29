@@ -1,7 +1,7 @@
 # A Simple Library Application 
 A simple library application with local storage designed to catalogue books you have read.
 
-[Project Page] 
+[Project Page](https://gerardohidalgo.com/library/)
 
 ## Instructions
 #### Main Library
